@@ -23,19 +23,19 @@ spec:
             - containerPort: {{ .Values.containerPort }}
           env:
 
-          { { - range $key, $value := .Values.secretData } }
+          { {- range $key, $value := .Values.secretData } }
           - name: { { $key } }
             valueFrom:
               secretKeyRef:
                 name: { { $.Values.secretName } }
                 key: { { $key } }
-          { { - end } }
+          { {- end } }
 
-          { { - range $key, $value := .Values.configData } }
+          { {- range $key, $value := .Values.configData } }
           - name: { { $key } }
             valueFrom:
               configMapKeyRef:
                 name: { { $.Values.configName } }
                 key: { { $key } }
-          { { - end } }
+          { {- end } }
 

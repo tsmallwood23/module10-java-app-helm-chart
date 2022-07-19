@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: { { .Values.configName } }
 data:
-  { { - range $key, $value := .Values.configData } }
+  { {- range $key, $value := .Values.configData } }
   { { $key } }: { { $value } }
-  { { - end } }
+  { {- end } }
