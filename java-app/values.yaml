@@ -7,7 +7,7 @@ appImage: tsmallwood23/my-repo
 appVersion: java-mysqlv1.0
 
 registrySecret: docker-hub
-secretType: Opaque
+#secretType: Opaque
 secretName: java-secret
 secretData:
   DB_USER: dGFubmVy
